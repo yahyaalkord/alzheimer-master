@@ -8,12 +8,6 @@ import 'package:patient_app/firebase_helper.dart';
 class FbStorageController with FirebaseHelper {
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
-  ///Functions:
-  ///1) Read
-
-
-
-
   Future<List<Reference>> read({required String id}) async {
     ListResult listResult = await _storage.ref('images').list();
     List<Reference> filteredItems = [];

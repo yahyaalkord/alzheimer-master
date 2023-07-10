@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
     
     if(isFallen && !isOpenDilog){
       isOpenDilog = true;
-      Future.delayed(Duration(seconds: 1),(){
+      Future.delayed(const Duration(seconds: 1),(){
         homePageControllerImp.playAudio();
         AwesomeDialog(
             context: context,
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Alzheimer\'s Assistant"),
-        backgroundColor: Color(0xff096b6c),
+        backgroundColor: const Color(0xff096b6c),
         elevation: 0,
         centerTitle: true,
         actions: [
@@ -94,8 +94,7 @@ class _HomePageState extends State<HomePage> {
                 return DiaryScreen(id: userId!);
               },));
             }
-            print(userId);
-          },icon: Icon(Icons.note_alt_outlined,color: Colors.white,))
+          },icon: const Icon(Icons.note_alt_outlined,color: Colors.white,size: 32,))
         ],
       ),
       drawer: const custom.NavigationDrawer(),
@@ -162,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 // Container(

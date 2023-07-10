@@ -76,7 +76,7 @@ class _DiaryScreenState extends State<DiaryScreen> {
                       return RefreshIndicator(
                         onRefresh: () => refresh(),
                         child: ListView.builder(
-                          padding: EdgeInsetsDirectional.only(bottom: 300),
+                          padding: const EdgeInsetsDirectional.only(bottom: 300),
                           itemCount: items.length,
                           itemBuilder: (context, index) {
                             return FutureBuilder<String>(
@@ -86,7 +86,7 @@ class _DiaryScreenState extends State<DiaryScreen> {
                                   String imageUrl = snapshot.data!;
                                   return Container(
                                     height: 130,
-                                    padding: EdgeInsetsDirectional.only(start: 10),
+                                    padding: const EdgeInsetsDirectional.only(start: 10),
                                     margin: const EdgeInsetsDirectional.only(
                                         bottom: 10, start: 16, end: 16),
                                     decoration: BoxDecoration(
@@ -117,23 +117,23 @@ class _DiaryScreenState extends State<DiaryScreen> {
                                                   color: Colors.white)),
                                           child: Image.network(imageUrl,fit: BoxFit.cover,),
                                         ),
-                                        SizedBox(width: 30,),
+                                        const SizedBox(width: 30,),
                                         Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Row(
                                               children: [
-                                                Icon(Icons.person,size: 30,color: Colors.white,),
-                                                SizedBox(width: 10,),
-                                                Text('${items[index].name.split('.')[1]}',style: TextStyle(fontSize: 20,color: Colors.white),),
+                                                const Icon(Icons.person,size: 30,color: Colors.white,),
+                                                const SizedBox(width: 10,),
+                                                Text('${items[index].name.split('.')[1]}',style: const TextStyle(fontSize: 20,color: Colors.white),),
                                               ],
                                             ),
-                                            SizedBox(height: 20,),
+                                            const SizedBox(height: 20,),
                                             Row(
                                               children: [
-                                                Icon(Icons.account_tree,size: 30,color: Colors.white,),
-                                                SizedBox(width: 10,),
-                                                Text('${items[index].name.split('.')[2]}',style: TextStyle(fontSize: 20,color: Colors.white)),
+                                                const Icon(Icons.account_tree,size: 30,color: Colors.white,),
+                                                const SizedBox(width: 10,),
+                                                Text('${items[index].name.split('.')[2]}',style: const TextStyle(fontSize: 20,color: Colors.white)),
                                               ],
                                             ),
                                           ],
@@ -142,9 +142,9 @@ class _DiaryScreenState extends State<DiaryScreen> {
                                     ),
                                   );
                                 } else if (snapshot.hasError) {
-                                  return Text('حدث خطأ في الحصول على الصورة');
+                                  return const Text('حدث خطأ في الحصول على الصورة');
                                 } else {
-                                  return SizedBox();
+                                  return const SizedBox();
                                 }
                               },
                             );
@@ -156,7 +156,7 @@ class _DiaryScreenState extends State<DiaryScreen> {
                       return Text('حدث خطأ: ${snapshot.error}');
                     } else {
                       // جارٍ استرداد البيانات
-                      return Center(
+                      return const Center(
                         child: SizedBox(
                           height: 100,
                             width: 100,
